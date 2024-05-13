@@ -1,0 +1,104 @@
+html,
+body {
+  height: 100%;
+  background-image: url('img/rsfs.jpg');
+  align-content: center;
+}
+
+.container{
+  height: 100%;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.success-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1000;
+  display: none;
+}
+
+.dashboard {
+  background-color: #2196F3;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-align: center;
+  margin: 50px auto;
+  width: 80%;
+  max-width: 800px;
+}
+
+.dashboard h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.dashboard p {
+  font-size: 18px;
+}
+
+.user-image {
+  max-width: 200px;
+  height: auto;
+  margin-top: 30px;
+}
+
+th {
+  background-color: #007bff; /* Warna latar belakang */
+  color: #ffffff; /* Warna teks */
+  font-weight: bold; /* Tebalkan teks */
+  text-align: center; /* Pusatkan teks */
+  padding: 10px; /* Padding untuk sel header */
+}
+
+/* Untuk tampilan perangkat seluler */
+@media (max-width: 767px) {
+  .form-group {
+      margin-bottom: 15px; /* Berikan margin bawah agar elemen terpisah */
+  }
+
+  .btn {
+      margin-top: 15px; /* Berikan margin atas pada tombol */
+  }
+}
+
+
+.status-button.status-Disetujui[disabled="disabled"] {
+  background-color: #4CAF50; /* Hijau */
+  color: white; /* Teks putih */
+}
+
+/* Warna teks putih untuk tombol status tidak disetujui */
+.status-button.status-tidak-setuju[disabled="disabled"] {
+  background-color: #f44336; /* Merah */
+  color: white; /* Teks putih */
+}
+
+
+
