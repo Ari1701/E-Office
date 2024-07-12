@@ -167,11 +167,15 @@ Route::get('/download/{id}', [SuratSekertarisController::class, 'download'])->na
 Route::get('/pdf/pesan', [ViewPDFController::class, 'ViewNotadinasPDF'])->name('viewnotadinaspdf');
 Route::get('/pdf/{id}', [ViewPDFController::class, 'ViewDisposisiPDF'])->name('viewdisposisipdf');
 Route::delete('/delete/{id}', [SuratSekertarisController::class, 'destroy'])->name('delete.destroy');
+Route::get('/edit-teruskan/{id}', [SuratSekertarisController::class, 'editTeruskan'])->name('editTeruskan');
+Route::post('/update-teruskan/{id}', [SuratSekertarisController::class, 'updateTeruskan'])->name('updateTeruskan');
+
+
 
 
 
 Route::get('/infosuratkomite', [KomiteController::class, 'show'])->name('komite.infosurat');
-Route::get('/pdf/{id}/komite', [KomiteController::class, 'PDF'])->name('view.pdf');
+Route::get('/pdf/{id}/komite', [ViewPDFController::class, 'ViewDisposisiPDF'])->name('viewdisposisikomite');
 Route::get('/pdf/{id}/notadinas', [ViewPDFController::class, 'ViewNotadinasPDF'])->name('viewnotadinaspdf');
 Route::get('/download/{id}', [DownloadController::class, 'DownloadNotadinas'])->name('downloadnotadinas');
 Route::post('/tambahkomite', [SuratSekertarisController::class, 'store'])->name('komitetim.store');

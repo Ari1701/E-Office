@@ -10,8 +10,8 @@ class KomiteController extends Controller
 {
     public function show()
     {
-        $direktur = Surat::whereIn('departemen', ['Komite & Tim'])->get();
-        return view('komitetim.infosurat', compact('direktur'));
+        $sekertaris = Sekertaris::whereIn('teruskan', ['Komite & Tim'])->get();
+        return view('komitetim.infosurat', compact('sekertaris'));
     
     }
 
@@ -40,7 +40,7 @@ class KomiteController extends Controller
         return abort(404); // Mengembalikan 404 jika surat tidak ditemukan
     }
 
-    $filepath = storage_path("app/pdfs/{$surat->file}");
+    $filepath = storage_path("app/disposisi/{$surat->file}");
     return response()->file($filepath);
 }
 

@@ -51,12 +51,13 @@ class SuratSekertarisController extends Controller
             'tanggal_diterima' => 'required|date',
             'perihal' => 'required',
             'pengirim' => 'required',
+            'departemen' => 'required',
             'file' => 'required|file|mimes:pdf|max:2048',
         ]);
 
         $file = $request->file('file');
         $filename = $file->getClientOriginalName();
-        $file->storeAs('sekertaris', $filename);
+        $file->storeAs('disposisi', $filename);
 
         Sekertaris::create([
             'jenis_surat' => $validatedData['jenis_surat'],
@@ -66,6 +67,7 @@ class SuratSekertarisController extends Controller
             'tanggal_diterima' => $validatedData['tanggal_diterima'],
             'perihal' => $validatedData['perihal'],
             'pengirim' => $validatedData['pengirim'],
+            'departemen' => $validatedData['departemen'],
             'file' => $filename,
         ]);
 
@@ -112,7 +114,6 @@ class SuratSekertarisController extends Controller
             'perihal' => 'required',
             'departemen' => 'required',
             'pengirim' => 'required',
-            // ...validasi untuk kolom lainnya...
         ]);
 
         // Temukan dan perbarui data surat
@@ -197,6 +198,30 @@ public function hitung()
             'jumlahSuratSekertaris' => $jumlahSuratSekertaris,
         ]);
     }
+
+    public function destroy($id)
+    {
+        $sekertaris = Sekertaris::findOrFail($id);
+        $sekertaris->delete();
+        return redirect()->route('sekertaris.show')->with('success', 'Surat berhasil dihapus');
+    }
+
+
+    public function editTeruskan($id)
+{
+    $sekertaris = Sekertaris::find($id);
+    return view('director.editTeruskan', compact('sekertaris'));
+}
+
+public function updateTeruskan(Request $request, $id)
+{
+    $sekertaris = Sekertaris::find($id);
+    $sekertaris->teruskan = $request->input('teruskan');
+    $sekertaris->save();
+
+    return redirect()->route('director.suratsekertaris')->with('success', 'Data berhasil diperbarui');
+}
+
 
 
     

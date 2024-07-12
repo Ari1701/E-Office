@@ -24,8 +24,8 @@ class KabagSDIController extends Controller
 
     public function showSDI()
     {
-        $direktur = Surat::whereIn('departemen', ['Kepala Bagian SDI'])->get();
-        return view('SDI.infosurat', compact('direktur'));
+        $sekertaris = Sekertaris::whereIn('teruskan', ['Kepala Bagian SDI'])->get();
+        return view('SDI.infosurat', compact('sekertaris'));
     }
 
     public function store(Request $request)

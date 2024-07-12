@@ -30,7 +30,7 @@
                             </thead>
 
                             <tbody>
-                                @foreach($direktur as $surat)
+                                @foreach($sekertaris as $surat)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $surat->jenis_surat }}</td>

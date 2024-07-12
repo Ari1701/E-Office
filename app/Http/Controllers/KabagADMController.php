@@ -24,8 +24,8 @@ class KabagADMController extends Controller
 
     public function showadministrasi()
     {
-        $direktur = Surat::whereIn('departemen', ['Kepala Bagian ADM & Keuangan'])->get();
-        return view('administrasi.infosurat', compact('direktur'));
+        $sekertaris = Sekertaris::whereIn('teruskan', ['Kepala Bagian ADM & Keuangan'])->get();
+        return view('administrasi.infosurat', compact('sekertaris'));
     }
 
     public function store(Request $request)

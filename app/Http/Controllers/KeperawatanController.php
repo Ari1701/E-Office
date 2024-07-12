@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Surat; 
-use App\Models\Notadinas; 
+use App\Models\Notadinas;
+use App\Models\Sekertaris;
 
 class KeperawatanController extends Controller
 {
@@ -37,11 +38,11 @@ class KeperawatanController extends Controller
 
     public function showkeperawatan(Request $request)
     {
-        $direktur = Surat::query();
+        $sekertaris = Sekertaris::query();
 
         if ($request->has('search')) {
             // Jika ada pencarian, tambahkan kondisi ke kueri
-            $direktur->where(function ($query) use ($request) {
+            $sekertaris->where(function ($query) use ($request) {
                 $query->where('jenis_surat', 'like', '%' . $request->input('search') . '%')
                     ->orWhere('perihal', 'like', '%' . $request->input('search') . '%')
                     ->orWhere('departemen', 'like', '%' . $request->input('search') . '%')
@@ -52,10 +53,10 @@ class KeperawatanController extends Controller
 
         }
 
-        $direktur = Surat::whereIn('departemen', ['Koordinator Kep. IGD','Koordinator Kep. Rawat Jalan','Koordinator Kep. Rawat Inap 3','Koordinator Kep. Rawat Inap 4','Koordinator Kep. Rawat Inap 5','Koordinator Kep. Anestesi & Perawatan Intensif','Koordinator Kep. Hemodialisis','Koordinator Kep. Bedah Sentral','Koordinator Kep. Kamar Bersalin & Perinatal'
+        $sekertaris = Sekertaris::whereIn('teruskan', ['Koordinator Kep. IGD','Koordinator Kep. Rawat Jalan','Koordinator Kep. Rawat Inap 3','Koordinator Kep. Rawat Inap 4','Koordinator Kep. Rawat Inap 5','Koordinator Kep. Anestesi & Perawatan Intensif','Koordinator Kep. Hemodialisis','Koordinator Kep. Bedah Sentral','Koordinator Kep. Kamar Bersalin & Perinatal'
 
         ])->get();
-        return view('keperawatan.infosurat', compact('direktur'));
+        return view('keperawatan.infosurat', compact('sekertaris'));
     }
 
     public function store(Request $request)

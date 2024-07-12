@@ -19,8 +19,10 @@ return new class extends Migration
             $table->date('tanggal_surat');
             $table->date('tanggal_diterima');
             $table->string('perihal');
-            $table->string('departemen')->default('Direktur Umum');
+            $table->string('departemen');
             $table->string('pengirim');
+            $table->string('dikirim ke')->default('Direktur Utama');
+            $table->string('teruskan')->default('Direktur Utama');
             $table->string('file');
             $table->timestamps();
     });

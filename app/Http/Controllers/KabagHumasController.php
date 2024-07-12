@@ -24,8 +24,8 @@ class KabagHumasController extends Controller
 
     public function showhumas()
     {
-        $direktur = Surat::whereIn('departemen', ['Kepala Bagian Humas & PKRS'])->get();
-        return view('humas.infosurat', compact('direktur'));
+        $sekertaris = Sekertaris::whereIn('departemen', ['Kepala Bagian Humas & PKRS'])->get();
+        return view('humas.infosurat', compact('sekertaris'));
     }
 
     public function store(Request $request)

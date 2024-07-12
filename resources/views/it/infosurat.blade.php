@@ -34,12 +34,11 @@
                                     <th>Pengirim</th>
                                     <th>File</th>
                                     <th>Lihat</th>
-                                    <th>Download File</th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                @foreach($direktur as $surat)
+                                @foreach($sekeratris as $surat)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $surat->jenis_surat }}</td>
@@ -55,11 +54,7 @@
                                             <i class="bi bi-eye"></i>Lihat PDF
                                         </a>
                                     </td>
-                                    <td>
-                                        <a href="{{ url('/download/' . $direktur->id) }}" class="btn btn-success">
-                                            <i class="bi bi-download"></i> Unduh PDF
-                                        </a>
-                                    </td>
+                                    
 
 
                                 </tr>

@@ -29,7 +29,7 @@
                             </thead>
 
                             <tbody>
-                                @foreach($direktur as $surat)
+                                @foreach($sekertaris as $surat)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $surat->jenis_surat }}</td>
@@ -42,11 +42,6 @@
                                     <td>
                                         <a href="{{ route('view.pdf', ['id' => $surat->id]) }}" target="_blank" class="btn btn-info">
                                             <i class="bi bi-eye"></i>Lihat PDF
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="{{ url('/download/' . $surat->id) }}" class="btn btn-success">
-                                            <i class="bi bi-download"></i> Unduh PDF
                                         </a>
                                     </td>
 

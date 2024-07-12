@@ -29,16 +29,8 @@
     </div>
 
     <div class="row mt-4">
-    <div class="col-md-4">
-        <div class="card bg-info text-white h-100">
-            <div class="card-body">
-                <h5 class="card-title"><i class="bi bi-envelope-plus"></i> Tambah Surat Disposisi</h5>
-                <a href="/surat" class="card-link text-white mt-1">Lihat Detail -></a>
-            </div>
-        </div>
-    </div>
 
-    <div class="col-md-4">
+    <div class="col-md-6">
         <div class="card bg-success text-white h-100">
             <div class="card-body">
                 <h5 class="card-title"><i class="bi bi-envelope-arrow-up"></i> Surat Keluar</h5>
@@ -47,7 +39,7 @@
         </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-6">
         <div class="card bg-danger text-white h-100">
             <div class="card-body">
                 <h5 class="card-title"><i class="bi bi-envelope-arrow-down"></i> Surat Masuk</h5>

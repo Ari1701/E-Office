@@ -33,8 +33,8 @@
                                     <th>Penerima</th>
                                     <th>Pengirim</th>
                                     <th>File</th>
-                                    <th>Lihat</th>
-                                    <th>Download File</th>
+                                    <th>Kirim Ke</th>
+                                    <th>Detail</th>
                                 </tr>
                             </thead>
 
@@ -51,17 +51,14 @@
                                     <td>{{ $sekertaris->pengirim }}</td>
                                     <td>{{ $sekertaris->file }}</td>
                                     <td>
-                                        <a href="{{ route('viewsekertarispdf', ['id' => $sekertaris->id]) }}" target="_blank" class="btn btn-info">
-                                            <i class="bi bi-eye"></i>Lihat PDF
-                                        </a>
-                                    </td>
+                                        {{ $sekertaris->teruskan }}
+                                        <a href="{{ route('editTeruskan', ['id' => $sekertaris->id]) }}" class="btn btn-primary">Edit</a>
+                                    </td>                            
                                     <td>
-                                        <a href="{{ url('/download/' . $sekertaris->id) }}" class="btn btn-success">
-                                            <i class="bi bi-download"></i> Unduh PDF
+                                        <a href="{{ route('viewsekertarispdf', ['id' => $sekertaris->id]) }}" target="_blank" class="btn btn-info">
+                                            <i class="bi bi-eye"></i>Detail
                                         </a>
                                     </td>
-
-
                                 </tr>
                                 @endforeach
 
@@ -73,4 +70,5 @@
         </div>
     </div>
 </div>
+
 @endsection

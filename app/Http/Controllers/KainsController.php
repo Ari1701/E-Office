@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Surat; 
-use App\Models\Notadinas; 
+use App\Models\Notadinas;
+use App\Models\Sekertaris;
 
 class KainsController extends Controller
 {
@@ -36,11 +37,11 @@ class KainsController extends Controller
 
     public function showkains(Request $request)
     {
-        $direktur = Surat::query();
+        $sekertaris = Sekertaris::query();
 
         if ($request->has('search')) {
             // Jika ada pencarian, tambahkan kondisi ke kueri
-            $direktur->where(function ($query) use ($request) {
+            $sekertaris->where(function ($query) use ($request) {
                 $query->where('jenis_surat', 'like', '%' . $request->input('search') . '%')
                     ->orWhere('perihal', 'like', '%' . $request->input('search') . '%')
                     ->orWhere('departemen', 'like', '%' . $request->input('search') . '%')
@@ -51,9 +52,9 @@ class KainsController extends Controller
 
         }
 
-        $direktur = Surat::whereIn('departemen', ['Kepala Instalasi Gawat Darurat','Kepala Instalasi Rawat Jalan','Kepala Instalasi Rawat Inap','Kepala Instalasi Anestesi & Perawatan Instensif','Kepala Instalasi Hemodialisis','Kepala Instalasi Bedah Sentral','Kepala Instalasi Kamar Bersalin & Perinatal','Kepala Instalasi Farmasi','Kepala Instalasi Rekam Medis','Kepala Instalasi Gizi','Kepala Instalasi Laboratprium','Kepala Instalasi Radiologi'
+        $sekertaris = Sekertaris::whereIn('teruskan', ['Kepala Instalasi Gawat Darurat','Kepala Instalasi Rawat Jalan','Kepala Instalasi Rawat Inap','Kepala Instalasi Anestesi & Perawatan Instensif','Kepala Instalasi Hemodialisis','Kepala Instalasi Bedah Sentral','Kepala Instalasi Kamar Bersalin & Perinatal','Kepala Instalasi Farmasi','Kepala Instalasi Rekam Medis','Kepala Instalasi Gizi','Kepala Instalasi Laboratprium','Kepala Instalasi Radiologi'
         ])->get();
-        return view('kains.infosurat', compact('direktur'));
+        return view('kains.infosurat', compact('sekertaris'));
     }
 
     public function store(Request $request)

@@ -47,8 +47,8 @@ class ManajerController extends Controller
 
     public function showdispoManajerIT()
     {
-        $direktur = Surat::whereIn('departemen', ['TIM IT'])->get();
-        return view('manajer.timkhususit.infosurat', compact('direktur'));
+        $sekertaris = Sekertaris::whereIn('teruskan', ['TIM IT'])->get();
+        return view('manajer.timkhususit.infosurat', compact('sekertaris'));
     }
 
     public function NotaDinasPDF($id)

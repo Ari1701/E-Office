@@ -24,8 +24,8 @@ class KabagIPSRSController extends Controller
 
     public function showipsrs()
     {
-        $direktur = Surat::whereIn('departemen', ['Kepala Bagian IPSRS & Rumah Tangga'])->get();
-        return view('ipsrs.infosurat', compact('direktur'));
+        $sekertaris = Sekertaris::whereIn('teruskan', ['Kepala Bagian IPSRS & Rumah Tangga'])->get();
+        return view('ipsrs.infosurat', compact('sekertaris'));
     }
 
     public function store(Request $request)

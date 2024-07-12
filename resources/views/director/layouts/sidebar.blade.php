@@ -12,18 +12,6 @@
                         Dashboard
                     </a>
                 </li>
-                <li class="nav-item {{ Request::is('/director/surat') ? 'active' : '' }}">
-                    <a class="nav-link mb-3" href="/surat">
-                    <i class="bi bi-envelope-plus-fill"></i>
-                        Tambah Surat
-                    </a>
-                </li>
-                <li class="nav-item {{ Request::is('/director/info') ? 'active' : '' }}">
-                    <a class="nav-link mb-3" href="/info">
-                    <i class="bi bi-envelope-arrow-up-fill"></i>
-                        Info Surat Keluar
-                    </a>
-                </li>
                 <li class="nav-item {{ Request::is('/director/suratsekertaris') ? 'active' : '' }}">
                     <a class="nav-link mb-3" href="/suratmasuk">
                     <i class="bi bi-envelope-arrow-down-fill"></i>

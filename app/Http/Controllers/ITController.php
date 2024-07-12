@@ -24,8 +24,8 @@ class ITController extends Controller
 
     public function showIT()
     {
-        $direktur = Surat::whereIn('departemen', ['TIM IT'])->get();
-        return view('it.infosurat', compact('direktur'));
+        $sekertaris = Sekertaris::whereIn('teruskan', ['TIM IT'])->get();
+        return view('it.infosurat', compact('sekertaris'));
     }
 
     public function store(Request $request)

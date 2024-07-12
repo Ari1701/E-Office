@@ -24,6 +24,7 @@
                                     <th>Tanggal Surat</th>
                                     <th>Tanggal masuk</th>
                                     <th>Perihal</th>
+                                    <th>Ditujukan ke</th>
                                     <th>Penerima</th>
                                     <th>Pengirim</th>
                                     <th>File</th>
@@ -42,6 +43,7 @@
                                     <td>{{ $sekertaris->tanggal_diterima }}</td>
                                     <td>{{ $sekertaris->perihal }}</td>
                                     <td>{{ $sekertaris->departemen }}</td>
+                                    <td>{{ $sekertaris->teruskan }}</td>
                                     <td>{{ $sekertaris->pengirim }}</td>
                                     <td>{{ $sekertaris->file }}</td>
                                     <td>

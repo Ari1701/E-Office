@@ -18,6 +18,9 @@ class Sekertaris extends Model
         'tanggal_diterima',
         'perihal',
         'pengirim',
+        'departemen',
+        'dikirim ke',
+        'teruskan',
         'file',
     ];
 }
