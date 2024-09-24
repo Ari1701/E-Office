@@ -113,16 +113,16 @@ class ManajerController extends Controller
 
     public function showdispoManajerPelayanan()
     {
-        $direktur = Surat::whereIn('departemen', ['Kepala Instalasi Gawat Darurat','Kepala Instalasi Rawat Jalan','Kepala Instalasi Rawat Inap','Kepala Instalasi Anestesi & Perawatan Instensif','Kepala Instalasi Hemodialisis','Kepala Instalasi Bedah Sentral','Kepala Instalasi Kamar Bersalin & Perinatal','Kepala Instalasi Farmasi','Kepala Instalasi Rekam Medis','Kepala Instalasi Gizi','Kepala Instalasi Laboratprium','Kepala Instalasi Radiologi'
+        $sekertaris = Sekertaris::whereIn('teruskan', ['Kepala Instalasi Gawat Darurat','Kepala Instalasi Rawat Jalan','Kepala Instalasi Rawat Inap','Kepala Instalasi Anestesi & Perawatan Instensif','Kepala Instalasi Hemodialisis','Kepala Instalasi Bedah Sentral','Kepala Instalasi Kamar Bersalin & Perinatal','Kepala Instalasi Farmasi','Kepala Instalasi Rekam Medis','Kepala Instalasi Gizi','Kepala Instalasi Laboratprium','Kepala Instalasi Radiologi'
         ])->get();
-        return view('manajer.pelayanan.infosurat', compact('direktur'));
+        return view('manajer.pelayanan.infosurat', compact('$sekertaris'));
     }
 
     public function showdispoManajerKeperawatan()
     {
-        $direktur = Surat::whereIn('departemen', ['Koordinator Kep. IGD','Koordinator Kep. Rawat Jalan','Koordinator Kep. Rawat Inap 3','Koordinator Kep. Rawat Inap 4','Koordinator Kep. Rawat Inap 5','Koordinator Kep. Anestesi & Perawatan Intensif','Koordinator Kep. Hemodialisis','Koordinator Kep. Bedah Sentral','Koordinator Kep. Kamar Bersalin & Perinatal'
+        $sekertaris = Sekertaris::whereIn('teruskan', ['Koordinator Kep. IGD','Koordinator Kep. Rawat Jalan','Koordinator Kep. Rawat Inap 3','Koordinator Kep. Rawat Inap 4','Koordinator Kep. Rawat Inap 5','Koordinator Kep. Anestesi & Perawatan Intensif','Koordinator Kep. Hemodialisis','Koordinator Kep. Bedah Sentral','Koordinator Kep. Kamar Bersalin & Perinatal'
         ])->get();
-        return view('manajer.keperawatan.infosurat', compact('direktur'));
+        return view('manajer.keperawatan.infosurat', compact('$sekertaris'));
     }
 
     public function showManajerKeperawatan()
